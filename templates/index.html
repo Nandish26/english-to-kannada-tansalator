@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Kannada Translator - Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">🌐 English to Kannada Translator</h1>
+                <p class="subtitle">Translate English text to Kannada with Text-to-Speech</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="translator-section">
+                <!-- Input Section -->
+                <div class="section english-section">
+                    <div class="section-header">
+                        <h2>English</h2>
+                        <span class="lang-badge">EN</span>
+                    </div>
+                    <textarea 
+                        id="englishText" 
+                        class="text-input"
+                        placeholder="Enter English text here..."
+                        rows="10"></textarea>
+                    
+                    <div class="button-group">
+                        <button id="speakEnglishBtn" class="btn btn-secondary" title="Speak English text">
+                            🔊 Speak English
+                        </button>
+                        <button id="clearEnglishBtn" class="btn btn-secondary" title="Clear English text">
+                            🗑️ Clear
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span class="divider-text">⇅</span>
+                </div>
+
+                <!-- Output Section -->
+                <div class="section kannada-section">
+                    <div class="section-header">
+                        <h2>ಕನ್ನಡ (Kannada)</h2>
+                        <span class="lang-badge">KN</span>
+                    </div>
+                    <textarea 
+                        id="kannadaText" 
+                        class="text-input"
+                        placeholder="Kannada translation will appear here..."
+                        rows="10"
+                        readonly></textarea>
+                    
+                    <div class="button-group">
+                        <button id="speakKannadaBtn" class="btn btn-secondary" title="Speak Kannada text">
+                            🔊 Speak Kannada
+                        </button>
+                        <button id="copyKannadaBtn" class="btn btn-secondary" title="Copy to clipboard">
+                            📋 Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Translate Button -->
+            <div class="translate-section">
+                <button id="translateBtn" class="btn btn-primary btn-large">
+                    🔄 Translate
+                </button>
+            </div>
+
+            <!-- Message Display -->
+            <div id="messageContainer" class="message-container">
+                <div id="message" class="message"></div>
+            </div>
+
+            <!-- Info Section -->
+            <section class="info-section">
+                <h3>ℹ️ How to Use</h3>
+                <ul class="info-list">
+                    <li>Type or paste English text in the left box</li>
+                    <li>Click <strong>"Translate"</strong> to convert to Kannada</li>
+                    <li>Use speaker buttons to hear pronunciation</li>
+                    <li>Click <strong>"Copy"</strong> to copy the translated text</li>
+                </ul>
+            </section>
+
+            <!-- Translation History -->
+            <section class="history-section" id="historySection" style="display: none;">
+                <h3>📝 Recent Translations</h3>
+                <div id="historyList" class="history-list"></div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>English to Kannada Translator | Powered by Flask & Google Translate API</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

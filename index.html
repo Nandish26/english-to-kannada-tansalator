@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Kannada Translator with Text-to-Speech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 English to Kannada Translator</h1>
+            <p>Translate English text to Kannada with Text-to-Speech</p>
+        </header>
+
+        <div class="translator-box">
+            <div class="input-section">
+                <div class="section-header">
+                    <h2>English</h2>
+                    <span class="lang-code">EN</span>
+                </div>
+                <textarea 
+                    id="englishText" 
+                    class="text-area" 
+                    placeholder="Enter English text here..."
+                    rows="6"></textarea>
+                <div class="button-group">
+                    <button id="speakEnglish" class="btn btn-speak">
+                        🔊 Speak English
+                    </button>
+                    <button id="clearEnglish" class="btn btn-clear">
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            <div class="divider">⇅</div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <h2>ಕನ್ನಡ (Kannada)</h2>
+                    <span class="lang-code">KN</span>
+                </div>
+                <textarea 
+                    id="kannadaText" 
+                    class="text-area" 
+                    placeholder="Kannada translation will appear here..."
+                    rows="6"
+                    readonly></textarea>
+                <div class="button-group">
+                    <button id="speakKannada" class="btn btn-speak">
+                        🔊 Speak Kannada
+                    </button>
+                    <button id="copyKannada" class="btn btn-copy">
+                        📋 Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>ℹ️ How to Use</h3>
+            <ul>
+                <li>Type or paste English text in the left box</li>
+                <li>Click "Translate" to convert to Kannada</li>
+                <li>Use the speaker buttons to hear the pronunciation</li>
+                <li>Copy button allows you to copy the translated text</li>
+            </ul>
+        </div>
+
+        <div class="translate-btn-container">
+            <button id="translateBtn" class="btn btn-translate">
+                🔄 Translate
+            </button>
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <footer>
+            <p>English to Kannada Translator | Powered by JavaScript & Web APIs</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
